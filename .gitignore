@@ -1,0 +1,15 @@
+# secrets
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# local data/db artifacts (keep repo clean)
+vector_rag/data/
+graph_rag/data/
+
+# OS
+.DS_Store
+.env.save

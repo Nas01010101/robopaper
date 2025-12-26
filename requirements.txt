@@ -1,0 +1,11 @@
+python-dotenv
+feedparser
+
+# Vector RAG stack
+langchain
+langchain-openai
+langchain-chroma
+chromadb
+
+# Graph RAG stack
+neo4j
