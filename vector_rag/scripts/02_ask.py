@@ -47,7 +47,7 @@ def ask_question(question: str, persist_dir: str = "./chroma_db") -> str:
     )
     
     # Step 2: Retrieve relevant documents
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
     docs = retriever.invoke(question)
     context = format_docs(docs)
     
@@ -56,7 +56,7 @@ def ask_question(question: str, persist_dir: str = "./chroma_db") -> str:
     
     # Step 3: Build prompt with context
     prompt = f"""Use the following context to answer the question. 
-If you don't know the answer, say "I don't know" - don't make things up.
+If you don't know the answer, say "I don't know" don't make things up.
 
 Context:
 {context}

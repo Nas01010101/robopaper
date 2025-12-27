@@ -55,7 +55,7 @@ if __name__ == "__main__":
     # Fetch papers from arXiv
     papers = load_arxiv_papers(
         query="robot reinforcement learning",
-        max_results=20
+        max_results=75
     )
     
     # Save for indexing
