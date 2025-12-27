@@ -10,14 +10,24 @@ This project was built to practicalize concepts from a DataCamp RAG course. It c
 
 ## System Architecture
 
+## System Architecture
+
+The system operates in two distinct phases:
+
+1.  **Ingestion (Static)**:
+    - We pre-fetch **75 research papers** from arXiv matching the query `"robot reinforcement learning"`.
+    - These 75 papers are fixed in our local database. The system does *not* go to the internet for every new question.
+    
+2.  **Retrieval (Dynamic)**:
+    - When you ask a question, the system searches *within* those 75 pre-loaded papers.
+    - It mathematically selects the top **10 specific text snippets** that best match your question.
+
 ```text
-SOURCE: arXiv API (Real-time Abstracts)
-   ↓
-VECTOR STORE: ChromaDB (Local Persistence)
-   ↓
-RETRIEVAL: HuggingFace Embeddings (all-MiniLM-L6-v2)
-   ↓
-GENERATION: Qwen-2.5-72B-Instruct (via Inference API)
+A. SETUP PHASE (Once)
+   arXiv API -> Fetch 75 Papers -> ChromaDB (Local Index)
+
+B. QUERY PHASE (Per Question)
+   Your Question -> Cosine Search (Top 10 chunks) -> LLM -> Answer
 ```
 
 ## Tech Stack

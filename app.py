@@ -170,10 +170,11 @@ with tab_home:
     with col1:
         st.markdown(
             "This system provides a targeted interface for querying scientific literature. "
-            "It ingests research abstracts directly from **arXiv**, focusing exclusively on the intersection of **Robotics** and **Machine Learning**."
+            "It ingests a dynamic corpus of **75 latest research papers** directly from **arXiv**, focusing exclusively on the intersection of **Robotics** and **Machine Learning**."
         )
         st.markdown(
-            "By leveraging **Retrieval-Augmented Generation (RAG)**, the assistant grounds its responses in retrieved evidence, reducing hallucinations and providing verifiable sources for every claim."
+            "**System Metrics**: The current knowledge base consists of a **curated snapshot of 75 research papers** on Robot Reinforcement Learning. "
+            "Upon querying, the system searches *within this fixed snapshot* to retrieve the **top 10 most relevant text chunks**."
         )
         
         st.markdown("<br>", unsafe_allow_html=True)
