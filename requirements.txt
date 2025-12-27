@@ -1,9 +1,14 @@
 python-dotenv
+streamlit
 feedparser
+arxiv
+pymupdf
 
 # Vector RAG stack
 langchain
-langchain-openai
+langchain-community
+langchain-huggingface
+sentence-transformers
 langchain-chroma
 chromadb
 

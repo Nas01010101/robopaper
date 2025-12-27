@@ -1,33 +1,53 @@
-# robopaper
+# RoboPaper: ArXiv Vector RAG
 
-Ask questions about robotics ML papers and get answers grounded in retrieved documents with citations.
+This project is a minimal implementation of Retrieval-Augmented Generation (RAG) using research papers from arXiv. I built this as a follow-up to a DataCamp RAG course to practicalize the concepts of document loading, embedding generation, and vector-based retrieval.
 
-Two implementations of the same idea: question-answering over robotics ML papers with citations.
+## Overview
 
-## Structure
-- vector_rag/ : classic RAG (Load → Split → Embed → Store → Retrieve → Generate)
-- graph_rag/  : Graph RAG (graph construction + Neo4j + Cypher retrieval → Generate)
+The system fetches research abstracts from arXiv, indexes them into a local ChromaDB vector store using HuggingFace embeddings, and uses the HuggingFace Inference API to generate answers grounded in the retrieved context.
+
+## Tech Stack
+
+- LangChain (Orchestration)
+- ChromaDB (Vector Store)
+- HuggingFace (Local Embeddings & Inference API)
+- Streamlit (Web Interface)
+- arXiv API (Data Source)
 
 ## Setup
-1) Create venv (already done):
-   python -m venv .venv
-   source .venv/bin/activate
 
-2) Install deps:
+1. Install dependencies:
+   ```bash
    pip install -r requirements.txt
+   ```
 
-3) Add API key:
-   cp .env.example .env
-   (edit .env and set OPENAI_API_KEY)
+2. Configure environment:
+   Create a `.env` file with your HuggingFace token:
+   ```env
+   HUGGINGFACEHUB_API_TOKEN=your_token_here
+   ```
 
-## Run (later)
-Vector RAG:
-  python vector_rag/scripts/00_load.py
-  python vector_rag/scripts/01_index.py
-  python vector_rag/scripts/02_ask.py "your question"
+## Usage
 
-Graph RAG:
-  docker compose up -d   (inside graph_rag when you add docker-compose.yml)
-  python graph_rag/scripts/00_load.py
-  python graph_rag/scripts/10_build_graph.py
-  python graph_rag/scripts/12_ask.py "your question"
+1. Load papers:
+   ```bash
+   python vector_rag/scripts/00_load.py
+   ```
+
+2. Index documents:
+   ```bash
+   python vector_rag/scripts/01_index.py
+   ```
+
+3. Run interface:
+   ```bash
+   streamlit run app.py
+   ```
+
+Alternatively, use `python vector_rag/scripts/02_ask.py "Your question"` for CLI access.
+
+## Project Structure
+
+- app.py: Graphical user interface.
+- vector_rag/scripts/: Core scripts for loading, indexing, and querying.
+- chroma_db/: Local persistent database.
