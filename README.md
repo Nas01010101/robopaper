@@ -4,7 +4,7 @@ A specialized Retrieval-Augmented Generation (RAG) system for the intersection o
 
 ## Overview
 
-This project was built to practicalize concepts from a DataCamp RAG course. It creates a local intelligence engine that ingests scientific abstracts from **arXiv**, indexes them using semantic vector embeddings, and uses a Large Language Model to synthesize evidence-based answers.
+This project was built to practice concepts from a DataCamp RAG course. It creates a local intelligence engine that ingests scientific abstracts from **arXiv**, indexes them using semantic vector embeddings, and uses a Large Language Model to synthesize evidence-based answers.
 
 **Scope**: Strictly limited to ML applications in Robotics.
 
