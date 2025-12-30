@@ -161,21 +161,17 @@ tab_home, tab_app = st.tabs(["Home", "Consult Assistant"])
 # --- HOME PAGE ---
 with tab_home:
     st.title("RoboPaper")
-    st.markdown("### *Specialized Intelligence for Robotics & Machine Learning*")
+    st.markdown("### Simple Research Assistant")
     
     st.markdown("<br>", unsafe_allow_html=True)
     
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.markdown(
-            "This system provides a targeted interface for querying scientific literature. "
-            "It ingests a dynamic corpus of **75 latest research papers** directly from **arXiv**, focusing exclusively on the intersection of **Robotics** and **Machine Learning**."
+            "**What is this?**  \n"
+            "A search engine for 75 recent **Robotics & ML** papers from arXiv."
         )
-        st.markdown(
-            "**System Metrics**: The current knowledge base consists of a **curated snapshot of 75 research papers** on Robot Reinforcement Learning. "
-            "Upon querying, the system searches *within this fixed snapshot* to retrieve the **top 10 most relevant text chunks**."
-        )
+
         
         st.markdown("<br>", unsafe_allow_html=True)
         # Call to Action
