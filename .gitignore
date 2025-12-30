@@ -9,7 +9,7 @@ __pycache__/
 # local data/db artifacts (keep repo clean)
 vector_rag/data/
 graph_rag/data/
-chroma_db/
+# chroma_db/  # Uncomment to exclude from git (needed for deployment)
 papers.pkl
 *.pkl
 

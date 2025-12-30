@@ -10,8 +10,6 @@ This project was built to practice concepts from a DataCamp RAG course. It creat
 
 ## System Architecture
 
-## System Architecture
-
 The system operates in two distinct phases:
 
 1.  **Ingestion (Static)**:
