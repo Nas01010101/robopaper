@@ -168,6 +168,7 @@ with tab_home:
     col1, col2 = st.columns([2, 1])
     
     with col1:
+        st.markdown(
             "**What is this?**  \n"
             "A search engine for 75 recent **Robotics & ML** papers from arXiv."
         )
